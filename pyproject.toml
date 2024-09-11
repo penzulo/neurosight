@@ -1,18 +1,25 @@
 [tool.poetry]
-name = "nuerosight"
+name = "neurosight"
 version = "0.1.0"
-description = "Machine Learning model that detects brain tumor based on brain scans and images."
+description = "Machine learning model that detects brain tumor based on brain scans and images."
 authors = ["Penzulo <bhargav.deshpande@mitwpu.edu.in>"]
 readme = "README.md"
 
 [tool.poetry.dependencies]
-python = "^3.12"
+python = "^3.11"
+flask = "^3.0.3"
 pandas = "^2.2.2"
-tensorflow = "^2.17.0"
 tqdm = "^4.66.5"
-opencv-python = "^4.10.0.84"
+tensorflow = "^2.17.0"
 scikit-learn = "^1.5.1"
+pillow = "^10.4.0"
+opencv-python = "^4.10.0.84"
 
+
+[tool.poetry.group.dev.dependencies]
+ipykernel = "^6.29.5"
+black = "^24.8.0"
+isort = "^5.13.2"
 
 [build-system]
 requires = ["poetry-core"]

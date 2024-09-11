@@ -1,0 +1,3 @@
+brain_scans/
+.ipynb_checkpoints/
+*.keras
