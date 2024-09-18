@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.0.3/dist/tailwind.min.css" rel="stylesheet">
+    <title>Result</title>
+    <style>
+        body {
+            background: linear-gradient(45deg, #4d59f7, #c760f7);
+        }
+    </style>
+</head>
+
+<body class="bg-gray-100 min-h-screen flex flex-col justify-center items-center">
+    <div class="max-w-md w-full bg-white shadow-md rounded-lg overflow-hidden">
+        <div class="bg-gray-200 py-3 px-6">
+            <h1 class="text-lg font-semibold text-gray-900">Machine Learning Results</h1>
+        </div>
+        <div class="p-6">
+            <a href="/" class="text-blue-500 hover:underline">Home</a>
+            <center>
+                <div class="mt-4 justify-center">
+                    <img src="{{ url_for('static', filename=filename) }}" alt="Image" class="object-cover">
+                </div>
+            </center>
+            <div class="mt-4">
+                <table class="w-full">
+                    <tr>
+                        <td class="font-semibold">Result</td>
+                        <td class="font-semibold">{{ result }}</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

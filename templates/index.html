@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Classification</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        body {
+            background: linear-gradient(45deg, #4d59f7, #c760f7);
+        }
+    </style>
+</head>
+
+<body class="flex flex-col items-center justify-center min-h-screen text-white font-sans">
+    <div class="max-w-md p-8 bg-white rounded-lg shadow-lg">
+        <h1 class="text-3xl font-bold mb-4 text-center text-black">Brain Tumor Image Classification</h1>
+        <h3 class="text-lg mb-8 text-center text-black">Image based detection of Brain Tumor type</h3>
+        <form action="/predict" method="POST" enctype="multipart/form-data"
+            class="flex flex-col items-center space-y-4">
+            <input type="file" name="file" class="py-2 px-4 border border-gray-300 rounded-lg shadow-sm text-black">
+            <button type="submit"
+                class="bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded-lg shadow-md transition duration-300">Upload</button>
+        </form>
+    </div>
+</body>
+
+</html>

@@ -1,3 +1,4 @@
 brain_scans/
+static/
 .ipynb_checkpoints/
 *.keras
