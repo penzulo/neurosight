@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Upload Brain Scan</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://db.onlinewebfonts.com/c/574e5b8318e53b92bdb78209bd03fc72?family=Dynamo+W04+Bold+Condensed"
+      rel="stylesheet"
+    />
+    <style>
+      @font-face {
+        font-family: Norwester;
+        src: url("{{ url_for('static', filename='fonts/norwester.otf') }}");
+      }
+      body {
+        background-image: url('{{ url_for("static", filename="img/bg.jpg") }}');
+        background-size: cover;
+        background-position: center;
+      }
+      .custom-file-upload {
+        display: inline-block;
+        padding: 10px 20px;
+        cursor: pointer;
+        background-color: #374151;
+        color: white;
+        font-weight: bold;
+        border-radius: 8px;
+        border: 2px dashed #6b7280;
+        transition: background-color 0.3s ease;
+      }
+      .custom-file-upload:hover {
+        background-color: #4b5563;
+      }
+      .file-name {
+        margin-left: 10px;
+        color: #4b5563;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body
+    class="h-screen flex flex-col items-center justify-center bg-opacity-70 backdrop-filter backdrop-blur-md text-center"
+  >
+    <!-- Title -->
+    <p
+      class="text-4xl md:text-6xl text-yellow-500 mb-8 tracking-wide"
+      style="font-family: 'Dynamo W04 Bold Condensed'"
+    >
+      Please upload<br />your brain scan
+    </p>
+
+    <!-- Form Container -->
+    <form
+      action="{{ url_for('predict') }}"
+      method="POST"
+      enctype="multipart/form-data"
+      class="flex flex-col items-center space-y-4 bg-gray-700 px-20 py-5 bg-opacity-70"
+    >
+      <!-- Modernized File Input -->
+      <label class="custom-file-upload">
+        <span class="text-orange-500">Browse</span>
+        <input
+          type="file"
+          name="file"
+          class="hidden"
+          onchange="displayFileName(this)"
+        />
+      </label>
+      <span class="file-name" id="file-name">FILE NAME</span>
+      <!-- Submit Button -->
+      <button
+        type="submit"
+        class="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-6 rounded-lg shadow-md transition duration-300"
+      >
+        Submit
+      </button>
+    </form>
+
+    <!-- JavaScript for File Name Display -->
+    <script>
+      function displayFileName(input) {
+        const fileName = input.files[0]?.name || "FILE NAME";
+        document.getElementById("file-name").textContent = fileName;
+      }
+    </script>
+  </body>
+</html>

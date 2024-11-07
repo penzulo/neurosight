@@ -1,0 +1,22 @@
+[tool.poetry]
+name = "neurosight"
+version = "0.1.0"
+description = ""
+authors = ["Penzulo <bhargav.deshpande@mitwpu.edu.in>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = ">=3.9, <3.12"
+Flask = "^3.0.3"
+tensorflow-io-gcs-filesystem = "0.31.0"
+tensorflow = "2.12.0"
+tensorflow-intel = "2.12.0"
+pillow = "^11.0.0"
+
+[tool.poetry.group.dev.dependencies]
+black = {extras = ["jupyter"], version = "^24.10.0"}
+isort = "^5.13.2"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
