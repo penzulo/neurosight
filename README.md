@@ -27,7 +27,7 @@
 
 1. **Clone the repository:**
     ```bash
-    git clone https://github.com/yourusername/neurosight.git
+    git clone https://github.com/penzulo/neurosight.git
     cd neurosight
     ```
 
